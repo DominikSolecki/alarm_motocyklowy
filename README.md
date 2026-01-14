@@ -2,23 +2,30 @@
 **Alarm motocyklowy z powiadomieniami SMS i Bluetooth**
 ![_DSC3636](https://github.com/user-attachments/assets/70fcd812-42fb-4301-93f1-5969bf0ac18c)
 Głównym założeniem projektu było stworzyć alarm motocyklowy z czujnikiem na bazie akcelerometru, powiadomieniami sms w razie alarmu.  
-bluetooth + aplikacja na telefon dająca możliwość zmiany ustawień alarmu, kontrola stanu akumulatora w motocyklu, kodowany pilot z rolling code.    
-  
+bluetooth + aplikacja na telefon dająca możliwość zmiany ustawień alarmu, kontrola stanu akumulatora w motocyklu, kodowany pilot z rolling code.
+ <BR>
+<BR>
+<BR>
+<BR> 
 **PILOT**  
 Pilot zbudowany jest na ATTINY85, do nadawania sygnału wykorzystałem SYN115. Pilot zasilany jest z baterii CR2032, ATTINY85 jest cały czas uspany a nadajnik SYN115 wyłączony.  
-Mikrostyki poprzez przerwanie wybudzają ATTINY85, a ten w zależności który mikrostyk go wybudził wysyła poprzez SYN115 7 ramek kodu pilota.  
-Kodowanie to KEELOQ + rolling code.  
+Mikrostyki poprzez przerwanie wybudzają ATTINY85, a ten w zależności który mikrostyk go wybudził wysyła poprzez SYN115 7 ramek kodu pilota. Kodowanie to KEELOQ + rolling code.  
 ![_DSC3637](https://github.com/user-attachments/assets/364f7548-a5a3-49b8-91e0-c1b896e62867)
 ![_DSC3639](https://github.com/user-attachments/assets/2c6f7956-4939-43a4-9ccb-0ce00c5ffdbd)
 
-Pobór prądu pilota w uśpieniu to 1uA  
+Pobór prądu pilota w uśpieniu to 1uA   
 
 ![1768388185922](https://github.com/user-attachments/assets/7c7d8f46-946c-4cbf-9df9-d3a6dc829999)
 
 
 <img width="1177" height="427" alt="obraz" src="https://github.com/user-attachments/assets/cef607a7-1d74-4af1-b122-b6059c9625cd" />
+  
 
-
+<BR>
+<BR>
+<BR>
+<BR>
+ 
 **ALARM**  
 Sercem alarmu jest STM32F401RET6.STM32 pracuje w cuklach, 500ms śpi, 50ms czeka na preambułę sygnału z pilota, gdy ją odbierze przedłuża sobie czas na odebranie całej ramki.
 Pilot nadaje 7 ramek, więc jeżeli zacznie nadawań w momencie gdy STM32 śpi, to któraś z ramek i tak zostanie odebrana po wybudzeniu.
@@ -42,8 +49,11 @@ Częstotliwość pomiaru napięcia akumulatora można ustawić w aplikacji. Dzie
   
   
 <img width="1403" height="617" alt="obraz" src="https://github.com/user-attachments/assets/752c497f-bef9-4805-986d-9468dd6500a3" />
-  
-    
+
+<BR>
+<BR>
+<BR>
+<BR>    
 **APLIKACJA**  
 Moduł Bluetooth jest włączany tylko po przekręceniu stacyjki. Ponowne wyłączenie stacyjki, lub uruchomienie silnika wyłącza moduł bluetooth.  
 Moduł bluetooth to AT-09, czyli w technologi BLE. Gdy bluetooth jest włączony można się połączyć aplikacją w telefonie z alarmem.  
