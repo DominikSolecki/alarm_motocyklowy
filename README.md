@@ -30,7 +30,7 @@ Pobór prądu pilota w uśpieniu to 1uA
 Sercem alarmu jest STM32F401RET6.STM32 pracuje w cuklach, 500ms śpi, 50ms czeka na preambułę sygnału z pilota, gdy ją odbierze przedłuża sobie czas na odebranie całej ramki.
 Pilot nadaje 7 ramek, więc jeżeli zacznie nadawań w momencie gdy STM32 śpi, to któraś z ramek i tak zostanie odebrana po wybudzeniu.
 Na czas uśpienia układ odbiorczy SYN480, akcelerometr LIS2dw12 są wyłączane za pośrednictwem power swicha. Pamięć eeprom, moduł sim, są włączane tylko po włączeniu alarmu.
-Dzięki temu średni pobór prądu przez alarm jest na poziomie około 900uA.
+Dzięki temu średni pobór prądu przez alarm jest na poziomie około 700uA.
 
 ![1768389966237](https://github.com/user-attachments/assets/1810ef29-84f2-4965-88ba-1c867b731bb9)
 ![1768389966262](https://github.com/user-attachments/assets/1709581a-1580-405c-915d-cb88fed4efb3)
