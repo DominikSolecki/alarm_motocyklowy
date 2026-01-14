@@ -44,7 +44,7 @@ Częstotliwość pomiaru napięcia akumulatora można ustawić w aplikacji. Dzie
 <img width="1403" height="617" alt="obraz" src="https://github.com/user-attachments/assets/752c497f-bef9-4805-986d-9468dd6500a3" />
   
     
-**APLIKACJA**
+**APLIKACJA**  
 Moduł Bluetooth jest włączany tylko po przekręceniu stacyjki. Ponowne wyłączenie stacyjki, lub uruchomienie silnika wyłącza moduł bluetooth.  
 Moduł bluetooth to AT-09, czyli w technologi BLE. Gdy bluetooth jest włączony można się połączyć aplikacją w telefonie z alarmem.  
 Komunikacja pomiędzy alarmem a aplikacją jest kodowana. Gdy łączymy się po raz pierwszy, czy to po instalacji aplikacji, lub wyczyszczeniu jej pamięci trzeba podać i sześciu cyfrowy numer z obudowy alarmu.  
